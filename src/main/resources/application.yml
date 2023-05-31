@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop # ;MVCC=TRUE 는 DB커넥션 여러개 허용하는것,, 권장옵션임
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create # 테이블 자동생성 옵션
+    properties:
+      hibernate:
+        show_sql: true # system.out.println 해서 커맨드라인에 찍는거.. 사용 ㄴㄴ
+        format_sql: true
+        default_batch_fetch_size: 100 # in ( , , , ...) 쿼리 날리는 갯수
+    open-in-view: false
+logging:
+  level:
+    org.hibernate.sql: debug # 생성 sql이 logger를 찍어서 보이도록
